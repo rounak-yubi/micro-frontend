@@ -40,6 +40,8 @@ module.exports = {
           name: "host",
           remotes: {
             config_system: "config_system@http://localhost:3001/remoteEntry.js",
+            computed_assesment:
+              "computed_assesment@http://localhost:3003/remoteEntry.js",
           },
           // shared: {
           //   react: { singleton: true },

@@ -2,15 +2,15 @@ const { ModuleFederationPlugin } = require("webpack").container;
 
 module.exports = {
   devServer: {
-    port: 3001,
+    port: 3003,
   },
   webpack: {
     plugins: {
       add: [
         new ModuleFederationPlugin({
-          name: "config_system",
+          name: "computed_assesment",
           exposes: {
-            "./Sample": "./src/components/Sample",
+            "./Assesment": "./src/components/Assesment",
           },
           filename: "remoteEntry.js",
           // shared: {

@@ -1,0 +1,4 @@
+# Ignore node_modules directories
+config_system/node_modules/
+host_app/node_modules/
+computed_assesment/node_modules/
