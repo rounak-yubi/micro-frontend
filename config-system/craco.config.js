@@ -12,11 +12,33 @@ module.exports = {
           exposes: {
             "./Sample": "./src/components/Sample",
           },
+          remotes: {
+            computed_assesment:
+              "computed_assesment@http://localhost:3003/remoteEntry.js",
+          },
           filename: "remoteEntry.js",
-          // shared: {
-          //   react: { singleton: true },
-          //   "react-dom": { singleton: true },
-          // },
+          shared: {
+            react: {
+              singleton: true,
+              eager: false,
+              requiredVersion: "^18.2.0",
+            },
+            "react-dom": {
+              singleton: true,
+              eager: false,
+              requiredVersion: "^18.2.0",
+            },
+            "react-router-dom": {
+              singleton: true,
+              eager: false,
+              requiredVersion: "^6.3.0",
+            },
+            // 'styled-components': {
+            //     singleton: true,
+            //     eager: true,
+            //     requiredVersion: '^5.3.5',
+            // },
+          },
         }),
       ],
     },
