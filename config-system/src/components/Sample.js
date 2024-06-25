@@ -1,6 +1,7 @@
 import React, { useState, Suspense } from "react";
 import TableComponent from "./TableComponent";
 
+import "./Sample.css";
 const Assessment = React.lazy(() => import("computed_assesment/Assesment"));
 
 const Sample = ({ sharedData, updateData }) => {
@@ -8,21 +9,19 @@ const Sample = ({ sharedData, updateData }) => {
 
   // Define table data as a constant
   const tableData = [
-    { id: 1, data: "Row 1 Data" },
-    { id: 2, data: "Row 2 Data" },
-    { id: 3, data: "Row 3 Data" },
+    { id: 1, data: "Row 1 Content" },
+    { id: 2, data: "Row 2 Content" },
+    { id: 3, data: "Row 3 Content" },
   ];
 
   const handleButtonClick = (value) => {
     if (value) {
-      console.log("Button clicked in App 1 with value: ", value);
       setApp2Data(value);
-      // Update sharedData with app2Data
     }
   };
 
   return (
-    <div>
+    <div className="sample-container">
       <h2>Remote App 1</h2>
       <TableComponent tableData={tableData} onButtonClick={handleButtonClick} />
       <Suspense fallback={<div>Loading Assessment...</div>}>

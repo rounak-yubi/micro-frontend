@@ -89,8 +89,9 @@
 import { useNavigate } from "react-router-dom";
 import "./Header.css"; // Import the CSS file
 
-const Header = () => {
-  const navigate = useNavigate();
+const Header = ({ navigate }) => {
+  console.log("navigate: ", navigate);
+  //   const navigate = useNavigate();
 
   const handleNavigation = (path) => {
     navigate(path);
