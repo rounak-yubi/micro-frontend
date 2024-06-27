@@ -33,11 +33,26 @@ module.exports = {
               eager: false,
               requiredVersion: "^6.3.0",
             },
-            // 'styled-components': {
-            //     singleton: true,
-            //     eager: true,
-            //     requiredVersion: '^5.3.5',
-            // },
+            "@yubi/yb-core-button": {
+              singleton: true,
+              eager: false,
+              requiredVersion: "^2.1.9",
+            },
+            "@yubi/yb-style-provider": {
+              singleton: true,
+              eager: false,
+              requiredVersion: "^2.1.2",
+            },
+            "react-native": {
+              singleton: true,
+              eager: false,
+              requiredVersion: "^0.71.3",
+            },
+            "react-native-web": {
+              singleton: true,
+              eager: false,
+              requiredVersion: "^0.19.9",
+            },
           },
         }),
       ],
@@ -51,4 +66,3 @@ module.exports = {
     }),
   },
 };
-// export {};

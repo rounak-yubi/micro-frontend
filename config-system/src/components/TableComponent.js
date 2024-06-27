@@ -1,6 +1,7 @@
 import React from "react";
+import Button from "@yubi/yb-core-button";
 
-const TableComponent = ({ tableData, onButtonClick }) => {
+const TableComponent = ({ tableData, onButtonClick, styleConnector }) => {
   return (
     <table>
       <thead>
@@ -16,9 +17,17 @@ const TableComponent = ({ tableData, onButtonClick }) => {
             <td>{item.id}</td>
             <td>{item.data}</td>
             <td>
-              <button onClick={() => onButtonClick(item.data)}>
-                Pass to App 2
-              </button>
+              <Button
+                disabled={false}
+                size="m"
+                onClick={() => {
+                  onButtonClick(item.data);
+                }}
+                title={"Pass to App 2"}
+                width="auto"
+                variant="cta"
+                styleConnector={styleConnector}
+              />
             </td>
           </tr>
         ))}

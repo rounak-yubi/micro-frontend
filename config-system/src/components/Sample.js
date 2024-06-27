@@ -2,9 +2,10 @@ import React, { useState, Suspense } from "react";
 import TableComponent from "./TableComponent";
 
 import "./Sample.css";
+
 const Assessment = React.lazy(() => import("computed_assesment/Assesment"));
 
-const Sample = ({ sharedData, updateData }) => {
+const Sample = ({ sharedData, updateData, styleConnector }) => {
   const [app2Data, setApp2Data] = useState([]);
 
   // Define table data as a constant
@@ -23,11 +24,14 @@ const Sample = ({ sharedData, updateData }) => {
   return (
     <div className="sample-container">
       <h2>Remote App 1</h2>
-      <TableComponent tableData={tableData} onButtonClick={handleButtonClick} />
+      <TableComponent
+        tableData={tableData}
+        onButtonClick={handleButtonClick}
+        styleConnector={styleConnector}
+      />
       <Suspense fallback={<div>Loading Assessment...</div>}>
         <Assessment sharedData={app2Data} />
       </Suspense>
-      <div>Data: {sharedData.app1Data}</div>
     </div>
   );
 };
